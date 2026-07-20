@@ -237,6 +237,23 @@ body {
   height: 40px;
 }
 
+/* Embed mode: widget fills its container (iframe) instead of floating. */
+.sf-embed-root {
+  min-height: 100vh;
+  background: #ffffff;
+}
+.sf-utility.fill {
+  position: static;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .sf-utility-header {
   all: unset;
   box-sizing: border-box;
