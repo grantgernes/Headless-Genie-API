@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Message = {
   id: string;
@@ -349,7 +351,13 @@ export default function ChatPage() {
               {messages.map((m) => (
                 <div key={m.id} className={`sf-message-row ${m.role}`}>
                   <div className={`sf-bubble ${m.role}${m.streaming ? " streaming" : ""}`}>
-                    {m.content}
+                    {m.role === "assistant" ? (
+                      <div className="sf-md">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
+                      </div>
+                    ) : (
+                      m.content
+                    )}
                     {m.status && <div className="sf-status">{m.status}</div>}
                   </div>
                   <div className="sf-timestamp">{formatTime(m.timestamp)}</div>
@@ -372,7 +380,7 @@ export default function ChatPage() {
               </button>
             </div>
 
-            <div className="sf-footer">Powered by Workato Genie</div>
+            <div className="sf-footer">Sales Agent (powered by Workato)</div>
           </>
         )}
       </div>
