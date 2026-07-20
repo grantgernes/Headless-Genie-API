@@ -1,0 +1,465 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Salesforce Sans", Arial, sans-serif;
+  color: #16325c;
+  background: #f3f3f3;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------- Salesforce shell -------- */
+
+.sf-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sf-topnav {
+  background: #032d60;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.sf-topnav-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  height: 48px;
+}
+
+.sf-logo {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  font-style: italic;
+}
+
+.sf-app-switcher {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sf-topnav-search {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sf-search-icon {
+  font-size: 15px;
+}
+
+.sf-topnav-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.sf-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e6a23c;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sf-tabbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #dddbda;
+}
+
+.sf-tab {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444444;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.sf-tab:hover {
+  color: #0176d3;
+}
+
+.sf-tab.active {
+  color: #0176d3;
+  border-bottom-color: #0176d3;
+}
+
+.sf-main {
+  flex: 1;
+  padding: 16px 20px 120px;
+}
+
+.sf-listview {
+  background: #ffffff;
+  border: 1px solid #dddbda;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.sf-listview-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #dddbda;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.sf-listview-eyebrow {
+  font-size: 11px;
+  color: #706e6b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sf-listview-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #16325c;
+  margin-top: 2px;
+}
+
+.sf-listview-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sf-btn {
+  background: #ffffff;
+  border: 1px solid #dddbda;
+  color: #0176d3;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sf-btn:hover {
+  background: #f3f3f3;
+}
+
+.sf-table {
+  font-size: 13px;
+}
+
+.sf-tr {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f3f3f3;
+  align-items: center;
+}
+
+.sf-tr:last-child {
+  border-bottom: none;
+}
+
+.sf-th {
+  background: #fafaf9;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #706e6b;
+  letter-spacing: 0.3px;
+}
+
+.sf-tr:not(.sf-th):hover {
+  background: #fafafb;
+}
+
+.sf-link {
+  color: #0176d3;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sf-link:hover {
+  text-decoration: underline;
+}
+
+/* -------- Utility widget -------- */
+
+.sf-utility {
+  position: fixed;
+  right: 24px;
+  bottom: 0;
+  width: 380px;
+  height: 520px;
+  background: #ffffff;
+  border: 1px solid #dddbda;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: height 0.2s ease;
+  z-index: 1000;
+}
+
+.sf-utility.collapsed {
+  height: 40px;
+}
+
+.sf-utility-header {
+  all: unset;
+  box-sizing: border-box;
+  background: #0176d3;
+  color: #ffffff;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 100%;
+  font-family: inherit;
+}
+
+.sf-utility-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sf-utility-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.sf-utility-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #ffffff;
+  user-select: none;
+}
+
+.sf-utility-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sf-context-bar {
+  background: #f3f3f3;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #444444;
+  border-bottom: 1px solid #dddbda;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sf-context-bar strong {
+  color: #16325c;
+  font-weight: 600;
+}
+
+.sf-context-sep {
+  color: #c9c7c5;
+}
+
+.sf-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+}
+
+.sf-empty-hint {
+  color: #706e6b;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 13px;
+  padding: 0 24px;
+  line-height: 1.5;
+}
+
+.sf-message-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 82%;
+}
+
+.sf-message-row.user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.sf-message-row.assistant {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.sf-bubble {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.sf-bubble.user {
+  background: #0176d3;
+  color: #ffffff;
+  border-bottom-right-radius: 3px;
+}
+
+.sf-bubble.assistant {
+  background: #ffffff;
+  color: #16325c;
+  border: 1px solid #dddbda;
+  border-bottom-left-radius: 3px;
+}
+
+.sf-bubble.assistant.streaming::after {
+  content: "▋";
+  display: inline-block;
+  margin-left: 2px;
+  animation: sf-blink 1s steps(2) infinite;
+  color: #706e6b;
+}
+
+@keyframes sf-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.sf-status {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #706e6b;
+  font-style: italic;
+}
+
+.sf-timestamp {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #706e6b;
+}
+
+.sf-error {
+  color: #c23934;
+  font-size: 12px;
+  padding: 8px 10px;
+  border: 1px solid #f4c0be;
+  border-radius: 4px;
+  background: #fdecec;
+}
+
+.sf-composer {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  border-top: 1px solid #dddbda;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.sf-composer input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dddbda;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #16325c;
+  background: #ffffff;
+  outline: none;
+}
+
+.sf-composer input:focus {
+  border-color: #0176d3;
+  box-shadow: 0 0 0 1px #0176d3;
+}
+
+.sf-composer input:disabled {
+  background: #f3f3f3;
+  color: #706e6b;
+}
+
+.sf-send-btn {
+  background: #0176d3;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sf-send-btn:hover:not(:disabled) {
+  background: #014486;
+}
+
+.sf-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sf-footer {
+  text-align: center;
+  padding: 6px 8px 8px;
+  font-size: 10px;
+  color: #706e6b;
+  background: #ffffff;
+  flex-shrink: 0;
+}
