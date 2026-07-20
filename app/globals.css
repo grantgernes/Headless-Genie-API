@@ -257,7 +257,7 @@ body {
 .sf-utility-header {
   all: unset;
   box-sizing: border-box;
-  background: #0176d3;
+  background: #ec3e24;
   color: #ffffff;
   height: 40px;
   padding: 0 12px;
@@ -367,7 +367,7 @@ body {
 }
 
 .sf-bubble.user {
-  background: #0176d3;
+  background: #ec3e24;
   color: #ffffff;
   border-bottom-right-radius: 3px;
 }
@@ -530,8 +530,8 @@ body {
 }
 
 .sf-composer input:focus {
-  border-color: #0176d3;
-  box-shadow: 0 0 0 1px #0176d3;
+  border-color: #ec3e24;
+  box-shadow: 0 0 0 1px #ec3e24;
 }
 
 .sf-composer input:disabled {
@@ -540,7 +540,7 @@ body {
 }
 
 .sf-send-btn {
-  background: #0176d3;
+  background: #ec3e24;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -552,7 +552,7 @@ body {
 }
 
 .sf-send-btn:hover:not(:disabled) {
-  background: #014486;
+  background: #c42d18;
 }
 
 .sf-send-btn:disabled {

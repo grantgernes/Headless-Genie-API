@@ -35,17 +35,25 @@ function formatTime(d: Date) {
   return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 }
 
-function SalesforceCloudIcon() {
+function WorkatoLogo() {
+  // Stylized "W" mark on a rounded square, sized to sit next to the title text.
   return (
     <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="currentColor"
+      width="22"
+      height="22"
+      viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path d="M9.5 7c1.66 0 3.03 1.03 3.55 2.47.44-.29.97-.47 1.55-.47 1.66 0 3 1.34 3 3 0 .18-.03.35-.06.5.34-.11.69-.17 1.06-.17 1.66 0 3 1.34 3 3s-1.34 3-3 3H5c-2.21 0-4-1.79-4-4s1.79-4 4-4c.28 0 .55.03.81.08C6.28 8.02 7.79 7 9.5 7z" />
+      <rect x="0" y="0" width="32" height="32" rx="6" fill="rgba(255,255,255,0.18)" />
+      <path
+        d="M6 10 L10 24 L13 15 L16 24 L19 15 L22 24 L26 10"
+        stroke="#ffffff"
+        strokeWidth="2.5"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -236,8 +244,8 @@ export default function GenieChatWidget({
           aria-expanded={!collapsed}
         >
           <div className="sf-utility-title">
-            <SalesforceCloudIcon />
-            <span>AI Assistant</span>
+            <WorkatoLogo />
+            <span>Workato AI Assistant</span>
           </div>
           <div className="sf-utility-controls">
             {collapsed ? (
