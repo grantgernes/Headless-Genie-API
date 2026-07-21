@@ -36,25 +36,16 @@ function formatTime(d: Date) {
 }
 
 function WorkatoLogo() {
-  // Stylized "W" mark on a rounded square, sized to sit next to the title text.
+  // Loads from /public/workato-logo.svg so the brand asset can be swapped
+  // by replacing the file — no code change needed.
   return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 32 32"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect x="0" y="0" width="32" height="32" rx="6" fill="rgba(255,255,255,0.18)" />
-      <path
-        d="M6 10 L10 24 L13 15 L16 24 L19 15 L22 24 L26 10"
-        stroke="#ffffff"
-        strokeWidth="2.5"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <img
+      src="/workato-logo.svg"
+      alt="Workato"
+      width={22}
+      height={22}
+      style={{ display: "block" }}
+    />
   );
 }
 

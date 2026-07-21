@@ -1,0 +1,9 @@
+<!-- Placeholder Workato logomark. Replace this file with the actual Workato logo
+     (grab the SVG or PNG from workato.com's brand assets / press kit). The chat
+     widget references /workato-logo.svg — no code change needed to swap. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <rect width="40" height="40" rx="8" fill="#ffffff"/>
+  <path d="M8 12 L14 30 L20 18 L26 30 L32 12"
+        stroke="#EC3E24" stroke-width="3.5" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -257,7 +257,7 @@ body {
 .sf-utility-header {
   all: unset;
   box-sizing: border-box;
-  background: #ec3e24;
+  background: #12173d;
   color: #ffffff;
   height: 40px;
   padding: 0 12px;
@@ -367,7 +367,7 @@ body {
 }
 
 .sf-bubble.user {
-  background: #ec3e24;
+  background: #12173d;
   color: #ffffff;
   border-bottom-right-radius: 3px;
 }
